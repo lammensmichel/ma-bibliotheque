@@ -5,12 +5,18 @@
     "ng": "ng",
     "prestart": "npm run build:libs",
     "start": "ng serve",
-
+    "books": "npm run watch:libs:books",
+    "routes": "npm run watch:libs:tools-routes",
     
+
+    "build:libs:tools-routes":"ng build tools-Routes",
+    "build:libs:tools":"npm run build:libs:tools-Routes",
+
     "build:libs:books":"ng build book-features",
     "build:libs": "npm run build:libs:books",
     "build:app": "ng build front-end",
 
+    "watch:libs:tools-routes": "ng build tools-Routes --watch --configuration development",
     "watch:libs:books": "ng build book-features --watch --configuration development",
     "watch:app": "ng build front-end --watch --configuration development",
     

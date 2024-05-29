@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ListBooksComponent } from '../../../public-api';
+import { ListBooksComponent } from '../../../../public-api';
 
 @Component({
   selector: 'libdtbc-page-list-books',

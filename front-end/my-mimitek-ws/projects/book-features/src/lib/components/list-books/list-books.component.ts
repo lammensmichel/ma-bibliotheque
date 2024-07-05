@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { getAllBooApplication } from '../services/books.application';
 import { CommonModule } from '@angular/common';
 import { SearchStore } from 'search';
@@ -8,10 +8,16 @@ import { SearchStore } from 'search';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './list-books.component.html',
-  styleUrl: './list-books.component.css'
+  styleUrl: './list-books.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListBooksComponent {
-    books$ = inject(getAllBooApplication).getAll();
+    private readonly application = inject(getAllBooApplication)
+    books$$ = this.application.getAll();
     searchStore = inject(SearchStore).store;
+
+    load():void{
+      this.application.load();
+    }
 
 }

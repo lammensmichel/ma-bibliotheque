@@ -1,7 +1,9 @@
 
 Recherche en cours {{ searchStore().item }}
 
-@for(book of books$  | async; track book.id){
+<button (click)="load()">Load</button>
+
+@for(book of books$$(); track book.id){
         <div>
             {{book.title}}
         </div>

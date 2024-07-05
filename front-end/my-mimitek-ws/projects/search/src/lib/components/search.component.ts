@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, inject } from "@angular/core";
-import { SearchStore } from "../services/search.service";
+import { SearchStore } from "../services/search.store";
 import { FormsModule } from "@angular/forms";
 import { initialSearchState } from "../models";
 

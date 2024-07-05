@@ -8,20 +8,16 @@
     "books": "npm run watch:libs:books",
     "routes": "npm run watch:libs:tools-routes",
     "search": "npm run watch:libs:search",
-    
-
-    "build:libs:tools-routes":"ng build tools-Routes",
-    "build:libs:tools":"npm run build:libs:tools-Routes",
-    "build:libs:books":"ng build book-features",
-    "build:libs.search":"ng build search",
+    "build:libs:tools-routes": "ng build tools-Routes",
+    "build:libs:tools": "npm run build:libs:tools-Routes",
+    "build:libs:books": "ng build book-features",
+    "build:libs.search": "ng build search",
     "build:libs": "npm run build:libs:books && npm run build:libs:tools-routes && npm run build:libs.search",
-
     "build:app": "ng build front-end",
     "watch:libs:search": "ng build search --watch --configuration development",
     "watch:libs:tools-routes": "ng build tools-Routes --watch --configuration development",
     "watch:libs:books": "ng build book-features --watch --configuration development",
     "watch:app": "ng build front-end --watch --configuration development",
-    
     "test": "ng test",
     "serve:ssr:front-end": "node dist/front-end/server/server.mjs"
   },
@@ -37,6 +33,7 @@
     "@angular/platform-server": "^18.0.0",
     "@angular/router": "^18.0.0",
     "@angular/ssr": "^18.0.1",
+    "@ngrx/signals": "^17.2.0",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

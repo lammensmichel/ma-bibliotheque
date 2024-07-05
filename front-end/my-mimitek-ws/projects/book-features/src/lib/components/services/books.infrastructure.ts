@@ -1,6 +1,7 @@
 import { Inject, Injectable } from "@angular/core";
 import { Observable, delay, of } from "rxjs";
 import { Books } from "../models";
+import { bookTable } from "./fakes";
 
 export interface BookFilter {
     value: string;
@@ -12,9 +13,8 @@ export interface getAllBooks  {
 
 export const inMemorugetAllBooks: getAllBooks = {
     getAll(filter: BookFilter) {
-        const table: Books = [{id:1, title:'dunes',author:{name:'frank Ferbert'}
-        }];
-        return of(table).pipe(delay(1500))
+        const filterTable = bookTable.filter(item =>  item.title.toLocaleLowerCase().startsWith(filter.value.toLocaleLowerCase()))
+        return of(filterTable).pipe(delay(1500))
     },
 }
 

@@ -1,9 +1,5 @@
 import { Injectable, Signal, inject } from "@angular/core";
-import { Observable, shareReplay, switchMap } from "rxjs";
 import { Books } from "../models";
-import { getAllBookInfrastructure } from "./books.infrastructure";
-import { SearchStore } from "search";
-import { toObservable } from "@angular/core/rxjs-interop";
 import { BooksStore } from "../store";
 
 @Injectable({providedIn: 'root'})

@@ -5,7 +5,7 @@ import { inject } from "@angular/core";
 import { rxMethod } from "@ngrx/signals/rxjs-interop";
 import {  pipe, switchMap, tap } from "rxjs";
 import { tapResponse } from "@ngrx/operators";
-import { patchState, signalStore, withMethods, withState } from "@ngrx/signals";
+import { patchState, getAll, withMethods, withState } from "@ngrx/signals";
 
 export interface BooksState{
     items: Books,
@@ -21,7 +21,7 @@ export const initialBookState: BooksState = {
 
 
  
-export const BooksStore = signalStore(
+export const BooksStore = getAll(
     withState(initialBookState),
     withMethods((store, bookInfra = inject(getAllBookInfrastructure)) => ({
         loadAll: rxMethod<string>(
@@ -40,3 +40,7 @@ export const BooksStore = signalStore(
               )  )
     }))
 );
+
+function tape(arg0: () => void): any {
+    throw new Error("Function not implemented.");
+}

@@ -21,7 +21,8 @@ export const initialBookState: BooksState = {
 
 
  
-export const BooksStore = signalStore(
+export const getAll = signalStore(
+    {providedIn: 'root' },
     withState(initialBookState),
     withMethods((store, bookInfra = inject(getAllBookInfrastructure)) => ({
         loadAll: rxMethod<string>(
